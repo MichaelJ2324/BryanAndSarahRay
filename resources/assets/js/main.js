@@ -547,14 +547,16 @@
 			var data = {};
 			var errors = [];
 
-			$contactForm.find('input').each(function() {
+			$contactForm.find(':input').each(function() {
 				$this = $(this);
 				var value = $this.val().replace(/<|>/g, "");
 				var name = $this.attr('name');
 				if (value !== '') {
 					data[name] = value;
 				} else {
-					errors.push('Field '+name+' is required.');
+					if (!(typeof name == 'undefined' || name == '' || name == 'undefined')){
+						errors.push('Field '+name+' is required.');
+					}
 				}
 			});
 
@@ -571,8 +573,12 @@
 				}).done(function(data) {
 					$("#clear").trigger('click');
 					$body.addClass('article-open');
-					$contentDiv.html("Thank you for reaching out. Check your email for confirmation, and we will speak to you soon.");
-				}).fail(function(status){
+					$('#current-article').find('.content').html("Thank you for reaching out. Check your email for confirmation, and we will speak to you soon.");
+					grecaptcha.reset();
+				}).fail(function(data){
+					if (data.error == 'CAPTCHA Validation Failed'){
+						grecaptcha.reset();
+					}
 					$formErrors.html("A server error has occurred. Please contact the server administrator.");
 				});
 			} else {

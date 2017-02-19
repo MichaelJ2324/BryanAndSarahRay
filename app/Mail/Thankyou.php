@@ -15,16 +15,17 @@ class Thankyou extends Mailable
 
     protected $name;
 
-    protected $message;
+    protected $userMessage;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name,$message)
+    public function __construct($email,$name,$message)
     {
+        $this->email = $email;
         $this->name = $name;
-        $this->message = $message;
+        $this->userMessage = $message;
     }
 
     /**
@@ -34,9 +35,9 @@ class Thankyou extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.thankyou')->with([
+        return $this->subject('Thanks for reaching out!')->view('emails.thankyou')->with([
             'name' => $this->name,
-            'message' => $this->message
+            'user_message' => $this->userMessage
         ]);
     }
 }

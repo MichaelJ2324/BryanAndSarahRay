@@ -547,14 +547,16 @@
 			var data = {};
 			var errors = [];
 
-			$contactForm.find('input').each(function() {
+			$contactForm.find(':input').each(function() {
 				$this = $(this);
 				var value = $this.val().replace(/<|>/g, "");
 				var name = $this.attr('name');
 				if (value !== '') {
 					data[name] = value;
 				} else {
-					errors.push('Field '+name+' is required.');
+					if (!(typeof name == 'undefined' || name == '' || name == 'undefined')){
+						errors.push('Field '+name+' is required.');
+					}
 				}
 			});
 
@@ -571,7 +573,10 @@
 				}).done(function(data) {
 					$("#clear").trigger('click');
 					$body.addClass('article-open');
-					$contentDiv.html("Thank you for reaching out. Check your email for confirmation, and we will speak to you soon.");
+					$('#current-article').find('.content').html("Thank you for reaching out. Check your email for confirmation, and we will speak to you soon.");
+					setTimeout(function(){
+						window.location.reload();
+					},5000);
 				}).fail(function(status){
 					$formErrors.html("A server error has occurred. Please contact the server administrator.");
 				});

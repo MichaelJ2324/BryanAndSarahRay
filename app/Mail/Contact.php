@@ -15,16 +15,17 @@ class Contact extends Mailable
 
     protected $name;
 
-    protected $message;
+    protected $userMessage;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name,$message)
+    public function __construct($email,$name,$message)
     {
+        $this->email = $email;
         $this->name = $name;
-        $this->message = $message;
+        $this->userMessage = nl2br($message);
     }
 
     /**
@@ -34,9 +35,10 @@ class Contact extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->name.' Readhing Out via WebForm')->from($this->email)->view('emails.contact')->with([
+        $subject = $this->name.' Reaching Out via Website';
+        return $this->subject($subject)->from($this->email)->view('emails.contact')->with([
             'name' => $this->name,
-            'message' => $this->message
+            'user_message' => $this->userMessage
         ]);
     }
 }

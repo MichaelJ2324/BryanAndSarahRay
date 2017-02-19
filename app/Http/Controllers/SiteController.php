@@ -20,16 +20,21 @@ class SiteController
     }
 
     public function contact(Request $request){
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $message = $request->input('message');
+        $name = strip_tags($request->input('name'));
+        $email = strip_tags($request->input('email'));
+        $message = strip_tags($request->input('message'));
 
-        \Mail::to($email)
-            ->send(new Thankyou($name,$message));
+        try {
+            \Mail::to('adopt@bryanandsarahray.family')
+                ->cc('webmaster@bryanandsarahray.com')
+                ->send(new Contact($email,$name,$message));
 
-        \Mail::to('adopt@bryanandsarahray.family')
-            ->cc('webmaster@bryanandsarahray.com')
-            ->send(new Contact($name,$message));
+            \Mail::to($email)
+                ->send(new Thankyou($email,$name,$message));
+        } catch (\Exception $ex){
+            return response(array('error' => $ex->getMessage()),500);
+        }
+        return response('Email Sent',200);
     }
 
 }

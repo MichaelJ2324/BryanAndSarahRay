@@ -7,18 +7,5 @@ Homestead.json
 Homestead.yaml
 .env
 
-storage/framework
-
 
 .DS_Store
-
-
-public/images/.DS_Store
-
-resources/.DS_Store
-
-resources/assets/.DS_Store
-
-resources/assets/images/.DS_Store
-
-resources/assets/images/site/.DS_Store
