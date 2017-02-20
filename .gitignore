@@ -9,3 +9,8 @@ Homestead.yaml
 
 
 .DS_Store
+
+*.map
+public/images/*.jpg
+public/images/email/*.jpg
+public/images/gallery/*.jpg

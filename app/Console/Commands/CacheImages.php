@@ -39,6 +39,12 @@ class CacheImages extends Command
      */
     public function handle()
     {
+        $this->copyGallery();
+        $this->copyEmail();
+        $this->copySite();
+    }
+
+    protected function copyGallery(){
         \Cache::forget($this->cacheStore);
         $galleryPhotos = \Config::get('site.gallery');
         $this->info(print_r($galleryPhotos,true));
@@ -51,7 +57,7 @@ class CacheImages extends Command
         while($c<$count){
             $photo = $keys[$c];
             $caption = $galleryPhotos[$keys[$c]];
-            $from = base_path("resources/assets/images/gallery/$photo.jpg");
+            $from = base_path("resources/assets/images/edited/$photo.jpg");
             $to = base_path("public/images/gallery/img$c.jpg");
             $public = "images/gallery/img$c.jpg";
             if (\File::exists($from)) {
@@ -70,7 +76,38 @@ class CacheImages extends Command
             }
             $c++;
         }
-        $this->info($cacheContent);
         \Cache::forever($this->cacheStore,$cacheContent);
+    }
+
+    protected function copySite(){
+        $sitePhotos = \Config::get('site.photos');
+        $this->info(print_r($sitePhotos,true));
+
+        foreach($sitePhotos as $photoName => $publicName){
+            $from = base_path("resources/assets/images/edited/$photoName.jpg");
+            $to = base_path("public/images/$publicName.jpg");
+            if (\File::exists($from)) {
+                if (\File::exists($to)) {
+                    $this->info("Removing $to");
+                    \File::delete($to);
+                }
+                $this->info("Copying file $from to $to");
+                \File::copy($from, $to);
+            }
+        }
+    }
+
+    protected function copyEmail(){
+        $from = base_path("resources/assets/images/edited/posed_square.jpg");
+        $to = base_path("public/images/email/posed_square.jpg");
+        if (\File::exists($from)) {
+            if (\File::exists($to)) {
+                $this->info("Removing $to");
+                \File::delete($to);
+            }
+            $this->info("Copying file $from to $to");
+            \File::copy($from, $to);
+        }
+
     }
 }

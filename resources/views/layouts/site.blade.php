@@ -3,6 +3,23 @@
 <html>
 <head>
     <title>Bryan & Sarah Ray</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('icons/apple-icon-57x57.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('icons/apple-icon-60x60.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('icons/apple-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('icons/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('icons/apple-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('icons/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('icons/apple-icon-144x144.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('icons/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icons/apple-icon-180x180.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('icons/android-icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('icons/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('icons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('icons/manifest.json') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ asset('icons//ms-icon-144x144.png') }}">
+    <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <!--[if lte IE 8]><script src="{{ asset('js/vendor/ie/html5shiv.js') }}></script><![endif]-->
@@ -92,7 +109,11 @@
                     <p>From Sarah</p>
                 </header>
                 <div class="content">
-                    <p>Bryan is the sweetest, kindest and most patient person I have ever met. He continues to amaze me every day with his generosity and willingness to help others. He finds a way tovfix just about anything put in front of him and loves to work on and tinker with his car.</p>
+                    <span class="image">
+                        <img src="{{ asset('images/meet_bryan.jpg') }}" alt="Meet Bryan" />
+                    </span>
+                    <span
+                    <p>Bryan is the sweetest, kindest and most patient person I have ever met. He continues to amaze me every day with his generosity and willingness to help others. He finds a way to fix just about anything put in front of him and loves to work on and tinker with his car.</p>
                     <p>He is the “fun uncle” and all kids love to play with him, he plays just like a kid and normally has one of them fall asleep on him from all the fun! I know he is going to be an amazing father, just seeing Bryan playing with our nephews and godsons proves it.</p>
                 </div>
             </article>
@@ -113,9 +134,9 @@
                     <h3><a href="#" class="link">Work</a></h3>
                     <p>Our daily hustle</p>
                     <div class="content">
-                        <p><b>SARAH</b> is the general manager at a
+                        <p><b>Sarah</b> is the general manager at a
                             beauty retailer and enjoys working for a family-friendly business. As a result she is always in touch with the latest hair styles and beauty trends.</p>
-                        <p><b>BRYAN</b> returned to school to get his degree in mechanical engineering and graduated in December of 2014. He is now working as a mechanical engineer and loves that every day is something different and he never knows what he may be designing next.</p>
+                        <p><b>Bryan</b> returned to school to get his degree in mechanical engineering and graduated in December of 2014. He is now working as a mechanical engineer and loves that every day is something different and he never knows what he may be designing next.</p>
                     </div>
                 </header>
             </article>

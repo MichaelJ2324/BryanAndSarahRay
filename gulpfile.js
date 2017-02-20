@@ -13,10 +13,12 @@ elixir(function(mix) {
         'ie9.scss'
     ],'resources/assets/css/ie9.css');
 
-    mix.copy('resources/assets/css', 'public/css');
-    mix.copy('resources/assets/js', 'public/js');
+    mix.copy('resources/assets/css/ie8.css', 'public/css/ie8.css');
+    mix.copy('resources/assets/css/ie9.css', 'public/css/ie9.css');
+    mix.copy('resources/assets/css/main.css', 'public/css/main.css');
+    mix.copy('resources/assets/css/vendor', 'public/css/vendor');
+    mix.copy('resources/assets/js/vendor', 'public/js/vendor');
     mix.copy('resources/assets/fonts', 'public/fonts');
-    mix.copy('resources/assets/images/site', 'public/images');
 
     mix.scripts([
         'util.js',
