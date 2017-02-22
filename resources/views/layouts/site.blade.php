@@ -97,6 +97,13 @@
                     <p>From Bryan</p>
                 </header>
                 <div class="content">
+                    <header class="major">
+                        <h1>Meet Sarah</h1>
+                        <h3>From Bryan</h3>
+                        <span class="image">
+                            <img src="{{ asset('images/meet_sarah.jpg') }}" alt="Meet Bryan" />
+                        </span>
+                    </header>
                     <p>Sarah is the most caring and nurturing person I know. She loves to dance and to make everyone around her smile.
                     Sarah is very creative; she is a talented seamstress and is also an amazing cook. Sarah made my Halloween costume one year. I was a giant puppy, complete with paws and floppy ears. She made it all! I am also amazed by her cooking, she is vegan, I am not, and she still cooks for me.</p>
                     <p>The time spent with our nephews, children of friends, or any kids she encounters
@@ -109,20 +116,30 @@
                     <p>From Sarah</p>
                 </header>
                 <div class="content">
-                    <span class="image">
-                        <img src="{{ asset('images/meet_bryan.jpg') }}" alt="Meet Bryan" />
-                    </span>
-                    <span
+                    <header class="major">
+                        <h1>Meet Bryan</h1>
+                        <h3>From Sarah</h3>
+                        <span class="image">
+                            <img src="{{ asset('images/meet_bryan.jpg') }}" alt="Meet Bryan" />
+                        </span>
+                    </header>
                     <p>Bryan is the sweetest, kindest and most patient person I have ever met. He continues to amaze me every day with his generosity and willingness to help others. He finds a way to fix just about anything put in front of him and loves to work on and tinker with his car.</p>
                     <p>He is the “fun uncle” and all kids love to play with him, he plays just like a kid and normally has one of them fall asleep on him from all the fun! I know he is going to be an amazing father, just seeing Bryan playing with our nephews and godsons proves it.</p>
                 </div>
             </article>
-            <article style="background-image: url('images/our_story.jpg');">
+            <article class="full" style="background-image: url('images/our_story.jpg');">
                 <header class="major">
                     <h3><a href="#" class="link">Our Story</a></h3>
                     <p>How we became Us</p>
                 </header>
                 <div class="content">
+                    <header class="major">
+                        <h1>Our Story</h1>
+                        <h3>How we became Us</h3>
+                        <span class="image">
+                            <img src="{{ asset('images/our_story.jpg') }}" alt="Our Story" />
+                        </span>
+                    </header>
                     <p>Thanks to a mutual friend we met in the fall of 2005. Sarah had recently graduated from college and started working at a clothing store as a manager. Bryan had been working as a technician at the local car dealership for
                     a few years. We dated for just over a year when Bryan proposed in front of family and friends at the New
                     Years Eve party we hosted. Sarah was caught completely by surprise! Our wedding took place in a beautiful park on a gorgeous Saturday in May. Over the next eight years of marriage our love for one another has continued to flourish and grow.
@@ -134,8 +151,14 @@
                     <h3><a href="#" class="link">Work</a></h3>
                     <p>Our daily hustle</p>
                     <div class="content">
-                        <p><b>Sarah</b> is the general manager at a
-                            beauty retailer and enjoys working for a family-friendly business. As a result she is always in touch with the latest hair styles and beauty trends.</p>
+                        <header class="major">
+                            <h1>Work</h1>
+                            <h3>Our daily hustle</h3>
+                            <span class="image">
+                                <img src="{{ asset('images/work.jpg') }}" alt="Work" />
+                            </span>
+                        </header>
+                        <p><b>Sarah</b> is the general manager at a beauty retailer and enjoys working for a family-friendly business. As a result she is always in touch with the latest hair styles and beauty trends.</p>
                         <p><b>Bryan</b> returned to school to get his degree in mechanical engineering and graduated in December of 2014. He is now working as a mechanical engineer and loves that every day is something different and he never knows what he may be designing next.</p>
                     </div>
                 </header>
@@ -145,8 +168,14 @@
                     <h3><a href="#" class="link">Play</a></h3>
                     <p>What we do for fun</p>
                     <div class="content">
-                        <p>For fun we enjoy taking trips, whether it be a day trip to IKEA or a water park or on
-                            a vacation in the Caribbean. We love doing
+                        <header class="major">
+                            <h1>Play</h1>
+                            <h3>What we do for fun</h3>
+                            <span class="image">
+                                <img src="{{ asset('images/play.jpg') }}" alt="Play" />
+                            </span>
+                        </header>
+                        <p>For fun we enjoy taking trips, whether it be a day trip to IKEA or a water park or on a vacation in the Caribbean. We love doing
                             house projects, yet we are great at starting them and never completing them 100%. We
                             enjoy riding our bikes and walking around our neighborhood and just enjoying time together.</p>
                         <p>Sarah has blossomed into a great gardener. She has a very nice vegetable garden in the backyard that features eggplant, bell peppers, tomatoes and a number of other veggies. She has designed the front flower gardens to burst with vibrant colors of irises, tulips, and daffodils starting in the spring and lasting until the early fall.</p>
@@ -244,6 +273,7 @@
     <footer id="footer">
         <div class="inner">
             <ul class="copyright">
+                <li>&copy; bryanandsarahray.family</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
     </footer>

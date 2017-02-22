@@ -165,6 +165,9 @@
 		@include breakpoint(medium) {
 			article {
 				width: 50% !important;
+				&.full {
+					width: 100% !important;
+				}
 			}
 		}
 
