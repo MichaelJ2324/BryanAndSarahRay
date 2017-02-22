@@ -4747,7 +4747,7 @@ body.is-menu-visible #menu .inner {
   height: 100%;
   left: 0;
   opacity: 0;
-  overflow: hidden;
+  overflow: scroll;
   padding: 3em 2em;
   position: fixed;
   top: 0;
@@ -4759,8 +4759,6 @@ body.is-menu-visible #menu .inner {
 #current-article .content {
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 #current-article .content header {
@@ -4830,6 +4828,10 @@ body.is-menu-visible #menu .inner {
 
 body.is-ie #current-article {
   background: rgba(107, 97, 138, 0.975);
+}
+
+body.article-open {
+  overflow-y: hidden;
 }
 
 body.article-open #current-article {
